@@ -1,0 +1,53 @@
+<table border="1">
+    <tr>
+        <td>Name</td>
+        <td><input type="text" id=""></td>
+        <td>Password</td>
+    </tr>
+    <tbody id="record">
+
+    </tbody>
+</table>
+
+<script type="text/javascript">
+
+    let data = [
+            {
+                Name : "sumit",
+                Email : "sumit@gmail.com",
+                Password : "1234"
+            },
+            {
+                Name : "krish",
+                Email : "krish@gmail.com",
+                Password : "4321"
+            },
+            {
+                Name : "dhruv",
+                Email : "dhruv@gmail.com",
+                Password : "7890"
+            },
+            {
+                Name : "vinit",
+                Email : "vinit@gmail.com",
+                Password : "4567"
+            }
+    ]
+    // console.log(data);
+    // let tbl = "";
+    // data.forEach((val)=>{
+    //     tbl +=`
+    //         <tr>
+    //             <td>${val.Name}</td>
+    //             <td>${val.Email}</td>
+    //             <td>${val.Password}</td>
+    //         </tr>
+    //     `
+    // })
+
+    
+
+    document.getElementById('record').innerHTML = tbl;
+
+
+</script>

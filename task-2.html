@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>array</title>
+  </head>
+  <body>
+    <h1 id="">RECORD</h1>
+    <table border="1">
+      <tr>
+        <td>Grid</td>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Phone</td>
+      </tr>
+      <tbody id="tabl" >
+
+      </tbody>
+
+    </table>
+    <script type="text/javascript">
+      
+        var data1 = [1, "hari", "hari@gmail.com", "10001"];
+        var data2 = [2, "rk", "rk@gmail.com", "10002"];
+        var data3 = [3, "jk", "jk@gmail.com", "10003"];
+        var data4 = [4, "ld", "ld@gmail.com", "10004"];
+      
+
+      var alldata = [data1,data2,data3,data4];
+      var n = parseInt(prompt("enter the number A :- "));
+      var table = "";
+      for(var i=0; i<alldata.length; i++){
+        if(n==alldata[i][0]){
+          table += `
+                <tr>
+                  <td>${alldata[i][0]}</td>
+                  <td>${alldata[i][1]}</td>
+                  <td>${alldata[i][2]}</td>
+                  <td>${alldata[i][3]}</td>
+                </tr>
+                 `
+        }
+      }
+
+      document.getElementById("tabl").innerHTML = table;
+      
+    </script>   
+  </body>
+</html>

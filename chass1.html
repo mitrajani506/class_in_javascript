@@ -1,0 +1,52 @@
+<table id="root" border="1"></table>
+
+<style>
+    .black{
+        background-color: rgb(235, 202, 11);
+        height: 100px;
+        width: 100px;
+    }
+    .white{
+        background-color: rgb(244, 232, 159);
+        height: 100px;
+        width: 100px;
+    }
+</style>
+
+<script type="text/javascript">
+
+    let root = document.getElementById('root');
+
+    for(let i=1; i<=8; i++){
+        let tr = document.createElement('tr');
+
+        if(i%2==1){
+            for(let j=1; j<=8; j++){
+                if(j%2==1){
+                    let td = document.createElement('td');
+                    td.setAttribute('class','white');   
+                    tr.appendChild(td)
+                }else{
+                    let td = document.createElement('td');
+                    td.setAttribute('class','black');
+                    tr.appendChild(td)
+                }
+            }
+        }else{
+            for(let j=1; j<=8; j++){
+                    if(j%2==1){
+                    let td = document.createElement('td');
+                    td.setAttribute('class','black');   
+                    tr.appendChild(td)
+                }else{
+                    let td = document.createElement('td');
+                    td.setAttribute('class','white');
+                    tr.appendChild(td)
+                }
+            }
+        }
+
+        root.appendChild(tr)
+    }
+
+</script>

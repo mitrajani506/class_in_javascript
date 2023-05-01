@@ -1,0 +1,113 @@
+<h1>User Register</h1>
+<table border="1">
+    <tr>
+        <td>Name : -</td>
+        <td><input type="text" id="name"></td>
+    </tr>
+    <tr>
+        <td>Email : -</td>
+        <td><input type="text" id="email"></td>
+    </tr>
+    <tr>
+        <td>Password : -</td>
+        <td><input type="password" id="password"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><input type="button" value="submit" onclick="save()"></td>
+    </tr>
+</table><br><br>    
+
+<table border="1">
+    <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Password</td>
+        <td>Action</td>
+    </tr>
+    <tbody id="record">
+
+    </tbody>
+</table>
+
+<script type="text/javascript">
+
+    //events
+    let data = [
+        {
+            id:111,
+            name : "ajay",
+            email : "ajay@gmail.com",
+            password : "ajay@123"
+        },
+        {
+            id:222,
+            name : "vijay",
+            email : "vijay@gmail.com",
+            password : "vijay@123"
+        },
+        {
+            id:333,
+            name : "sanjay",
+            email : "sanjay@gmail.com",
+            password : "sanjay@123"
+        }
+    ]
+   
+    const save = () => {
+       let name = document.getElementById('name').value;
+       let email = document.getElementById('email').value;
+       let password = document.getElementById('password').value;
+
+       let obj = {
+            id : Math.floor(Math.random() * 10000),
+            name : name,
+            email : email,
+            password : password,
+       }
+
+       data.push(obj);
+       alert("record successfully add");
+       document.getElementById('name').value = "",
+       document.getElementById('email').value = "",
+       document.getElementById('password').value = "",
+       getAllrecord();
+        
+    }
+
+    const getAllrecord = () => {
+       
+        let tbl = "";
+        data.map((val)=>{
+            tbl += `
+                        <tr>
+                            <td>${val.id}</td>
+                            <td>${val.name}</td>
+                            <td>${val.email}</td>
+                            <td>${val.password}</td>
+                            <td>
+                                <button onclick="deletedata(${val.id})">Delete</button></td>
+                        </tr>
+                    `
+        })
+
+        document.getElementById('record').innerHTML = tbl;
+    }
+    getAllrecord();
+
+
+    const deletedata = (id) => {
+        for(let i in data)
+        {
+            if(data[i].id == id)
+            {
+                data.splice(i,1);
+            }
+        }
+        alert("Record successfully delete");
+        getAllrecord();
+    }
+   
+
+</script>

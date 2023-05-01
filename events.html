@@ -1,0 +1,83 @@
+<table border="1">
+    <tr>
+        <td>Name:-</td>
+        <td><input type="text" id="name"></td>
+    </tr>
+    <tr>
+        <td>Email:-</td>
+        <td><input type="email" id="email"></td>
+    </tr>
+    <tr>
+        <td>password:-</td>
+        <td><input type="password" id="pass"></td>
+    </tr>
+    <tr>
+        <td colspan="2"><input type="button" value="submit" onclick="setRecord()"></td>
+    </tr>
+
+</table>
+<br><br>
+<table border="1">
+    <tbody id="rec">
+
+    </tbody>
+</table>
+
+<script>
+    let data = [
+        {
+            name: "ajay",
+            email: "ajay@example.com",
+            pass: "1234"
+        },
+        {
+            name: "srk",
+            email: "srk@example.com",
+            pass: "3434"
+        },
+        {
+            name: "salman",
+            email: "salman@example.com",
+            pass: "5656"
+        }
+
+    ]
+    
+    const setRecord = () => {
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let pass = document.getElementById("pass").value;
+
+
+        
+            let obj11= {
+            name: name,
+            email: email,
+            pass: pass,
+        }
+        data.push(obj11);
+
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = ""; 
+        document.getElementById("pass").value = "";
+        getRecord();
+    }
+
+    const getRecord = () => {
+        let tbl = "";
+        data.forEach((val) => {
+        // console.log(val);
+
+        tbl +=
+            `
+        <tr>
+            <td>${val.name}</td>
+            <td>${val.email}</td>
+            <td>${val.pass}</td>
+        </tr>
+    `
+    })
+    document.getElementById("rec").innerHTML = tbl;
+    }
+    getRecord();
+</script>

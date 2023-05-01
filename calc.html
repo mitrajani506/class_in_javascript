@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>Calc</title>
+    </head>
+
+    <body>
+        <table border="1">
+            <tr>
+                <td><input id="ans" type="text"></td>
+            </tr>
+
+            <tr>
+                <td>
+                    <button onclick="ans.value+='1'">1</button>
+                    <button onclick="ans.value+='2'">2</button>
+                    <button onclick="ans.value+='3'">3</button>
+                    <button onclick="ans.value+='+'">+</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <button onclick="ans.value+='4'">4</button>
+                    <button onclick="ans.value+='5'">5</button>
+                    <button onclick="ans.value+='6'">6</button>
+                    <button onclick="ans.value+='-'">-</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <button onclick="ans.value+='7'">7</button>
+                    <button onclick="ans.value+='8'">8</button>
+                    <button onclick="ans.value+='9'">9</button>
+                    <button onclick="ans.value+='*'">*</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button onclick="ans.value+='0'">0</button>
+                    <button onclick="ans.value+='.'">.</button>
+                    <button onclick="ans.value+='/'">/</button>
+                    <button onclick="ans.value = eval(ans.value)">=</button>
+                    <button onclick="save()">submit</button>
+                </td>
+            </tr>
+
+
+        </table>
+    </body>
+
+</html>
+
+
+<script type="text/javascript">
+
+  function save(){
+    let ans = document.getElementById('ans').value;
+   let typecheck = typeof(ans);
+   console.log(typecheck);
+  }
+
+</script>

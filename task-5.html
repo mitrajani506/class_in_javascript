@@ -1,0 +1,88 @@
+<table border="1">
+    <tr>
+        <td>Name :-</td>
+        <td><input type="text" id="name"></td>
+    </tr>
+    <tr>
+        <td>Email :-</td>
+        <td><input type="email" id="email"></td>
+    </tr>
+    <tr>
+        <td>Password :-</td>
+        <td><input type="password" id="password"></td>
+    </tr>
+    <tr>
+        <td colspan="2"><input type="button" value="Submit" onclick="setRecord()"></td>
+    </tr>
+</table>
+
+<br><br>
+
+<table border="1">
+    <tr>
+        <td> Name </td>
+        <td> Emali </td>
+        <td> Password </td>
+    </tr>
+    <tbody id="record">
+    </tbody>
+</table>
+
+<script type="text/javascript">
+
+    let data = [
+        {
+            name: "sumit",
+            email: "sumit@gmail.com",
+            password: "1234"
+        },
+        {
+            name: "ronak",
+            email: "ronak@gmail.com",
+            password: "4321"
+        },
+        {
+            name: "dhruv",
+            email: "dhruv@gmail.com",
+            password: "1643"
+        }
+    ]
+
+    const setRecord = () => {
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+    
+
+    let obj11 = {
+        name: name,
+        email: email,
+        password: password,
+    }
+    data.push(obj11);
+
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("password").value = "";
+    getRecord();
+    }
+
+    const getRecord = () => {
+        let tbl = "";
+        data.forEach((val) => {
+            // console.log(val);
+
+            tbl +=
+                `
+        <tr>
+            <td>${val.name}</td>
+            <td>${val.email}</td>
+            <td>${val.password}</td>
+        </tr>
+    `
+        })
+        document.getElementById("record").innerHTML = tbl;
+    }
+    getRecord();
+
+</script>
